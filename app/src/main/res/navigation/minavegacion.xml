@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/minavegacion"
+    app:startDestination="@id/hamburguesa">
+
+    <fragment
+        android:id="@+id/hamburguesa"
+        android:name="com.example.menu.hamburguesa"
+        android:label="fragment_hamburguesa"
+        tools:layout="@layout/fragment_hamburguesa" >
+        <action
+            android:id="@+id/action_hamburguesa_to_americana"
+            app:destination="@id/americana" />
+        <action
+            android:id="@+id/action_hamburguesa_to_pizza"
+            app:destination="@id/pizza" />
+        <action
+            android:id="@+id/action_hamburguesa_to_bebidas"
+            app:destination="@id/bebidas" />
+    </fragment>
+    <fragment
+        android:id="@+id/americana"
+        android:name="com.example.menu.americana"
+        android:label="fragment_americana"
+        tools:layout="@layout/fragment_americana" >
+        <action
+            android:id="@+id/action_americana_to_hamburguesa"
+            app:destination="@id/hamburguesa" />
+        <action
+            android:id="@+id/action_americana_to_bebidas"
+            app:destination="@id/bebidas" />
+        <action
+            android:id="@+id/action_americana_to_pizza"
+            app:destination="@id/pizza" />
+    </fragment>
+    <fragment
+        android:id="@+id/pizza"
+        android:name="com.example.menu.pizza"
+        android:label="fragment_pizza"
+        tools:layout="@layout/fragment_pizza" >
+        <action
+            android:id="@+id/action_pizza_to_bebidas"
+            app:destination="@id/bebidas" />
+        <action
+            android:id="@+id/action_pizza_to_americana"
+            app:destination="@id/americana" />
+        <action
+            android:id="@+id/action_pizza_to_hamburguesa"
+            app:destination="@id/hamburguesa" />
+    </fragment>
+    <fragment
+        android:id="@+id/bebidas"
+        android:name="com.example.menu.bebidas"
+        android:label="fragment_bebidas"
+        tools:layout="@layout/fragment_bebidas" >
+        <action
+            android:id="@+id/action_bebidas_to_pizza"
+            app:destination="@id/pizza" />
+        <action
+            android:id="@+id/action_bebidas_to_americana"
+            app:destination="@id/americana" />
+    </fragment>
+</navigation>
